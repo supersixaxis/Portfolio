@@ -1,6 +1,7 @@
 import React from 'react'
 import codeImg from '../../assets/background-home.jpg'
 import Card from './component/Card';
+import AboutMe from './component/AboutMe';
 export default function HomePage() {
     let icon = "test"
     let title1 = "Application sur mesure"
@@ -38,6 +39,7 @@ export default function HomePage() {
         <Card icon={icon} title={title2} text={text2} />
         <Card icon={icon} title={title3} text={text3} />
       </div>
+      <AboutMe />
     </div>
   );
 }
