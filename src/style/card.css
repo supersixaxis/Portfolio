@@ -1,0 +1,14 @@
+.card {
+  position: relative;
+ /* Supprime la bordure droite par défaut */
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 25%; /* Ajustez cette valeur pour contrôler la position verticale */
+  right: 0;
+  height: 60%; /* Ajustez cette valeur pour contrôler la hauteur de la bordure */
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.027);
+}

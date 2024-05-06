@@ -3,8 +3,14 @@ import codeImg from '../../assets/background-home.jpg'
 import Card from './component/Card';
 export default function HomePage() {
     let icon = "test"
-    let title = "test"
-    let text = "test de faire un text la l aa la kkndik dqsjdqjsdnq jqsdqn"
+    let title1 = "Application sur mesure"
+    let text1 = "Je réalise vos projets selon vos besoins."
+    let icon2 = "test"
+    let title2 = "SEO"
+    let text2 = "Je met en place une stratégie de référencement pour mettre en avant votre projet."
+    let icon3 = "test"
+    let title3 = "Application sur mesure"
+    let text3 = "Je réalise vos projets selon vos besoins."
   return (
     <div className="bg-color-primaire ">
       <div className="relative">
@@ -28,9 +34,9 @@ export default function HomePage() {
         </div>
       </div>
       <div className='flex justify-around'>
-        <Card icon={icon} title={title} text={text} />
-        <Card icon={icon} title={title} text={text} />
-        <Card icon={icon} title={title} text={text} />
+        <Card icon={icon} title={title1} text={text1} />
+        <Card icon={icon} title={title2} text={text2} />
+        <Card icon={icon} title={title3} text={text3} />
       </div>
     </div>
   );
