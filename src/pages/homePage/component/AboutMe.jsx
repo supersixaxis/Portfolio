@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import taskManager from "../../../assets/TaskManager.jpeg";
 
 export default function AboutMe() {
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState("Présentation"); // Définir "Présentation" comme bouton actif par défaut
   const [displayData, setDisplayData] = useState(null);
 
   const categoriesData = {
@@ -12,14 +13,14 @@ export default function AboutMe() {
     "Mes projets": {
       projects: [
         {
-          title: "Projet 1",
-          description: "Description du projet 1",
-          image: "url_de_l_image_1",
+          description: "Prototype site vitrine pour un site de logement",
+          image: taskManager,
+          url: "https://kaisa-kappa.vercel.app/",
         },
         {
-          title: "Projet 2",
-          description: "Description du projet 2",
-          image: "url_de_l_image_2",
+          description: "Prototype de copie de l'application Trello",
+          image: taskManager,
+          url: "https://task-manager-fdu50vyj7-supersixaxis-projects.vercel.app/login",
         },
         // Ajoutez d'autres projets selon vos besoins
       ],
@@ -29,10 +30,12 @@ export default function AboutMe() {
     },
   };
 
+  useEffect(() => {
+    setDisplayData(categoriesData[activeButton]);
+  }, [activeButton]);
+
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
-    // Mise à jour des données d'affichage en fonction du bouton cliqué
-    setDisplayData(categoriesData[buttonName]);
   };
 
   return (
@@ -56,26 +59,35 @@ export default function AboutMe() {
       <div className="mt-8">
         {/* Affichage des données en fonction du bouton cliqué */}
         {displayData && (
-          <div className="mx-auto w-[50%] text-center">
-            {activeButton === "Mes projets" && displayData.projects && (
-              <>
-                {displayData.projects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="card w-[100%] rounded-lg p-4 py-16 text-center shadow-lg"
-                  >
-                    <h3>{project.title}</h3>
-                    <p className="text-l text-center text-white">
-                      {project.description}
-                    </p>
-                  </div>
-                ))}
-              </>
+          <div className="mx-auto w-[90%] md:w-[80%] lg:w-[60%]">
+            {activeButton === "Présentation" && (
+              <p className="text-l text-white">{displayData.description}</p>
             )}
-            {activeButton !== "Mes projets" && (
-              <p className="text-l text-center text-white">
-                {displayData.description}
-              </p>
+            {activeButton === "Mes projets" && displayData.projects && (
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {displayData.projects.map((project, index) => (
+                  <a
+                    key={index}
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="card relative overflow-hidden rounded-lg">
+                      <img
+                        className="h-full w-full object-cover"
+                        src={project.image}
+                        alt="Project"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-4 text-white">
+                        <p className="text-lg">{project.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            )}
+            {activeButton === "Mes compétences" && (
+              <p className="text-l text-white">{displayData.description}</p>
             )}
           </div>
         )}
