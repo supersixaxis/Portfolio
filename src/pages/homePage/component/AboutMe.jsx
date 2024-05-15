@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import taskManager from "../../../assets/TaskManager.jpeg";
 
 export default function AboutMe() {
-  const [activeButton, setActiveButton] = useState("Présentation"); // Définir "Présentation" comme bouton actif par défaut
+  const [activeButton, setActiveButton] = useState("Présentation");
   const [displayData, setDisplayData] = useState(null);
 
   const categoriesData = {
@@ -57,40 +58,49 @@ export default function AboutMe() {
         ))}
       </div>
       <div className="mt-8">
-        {/* Affichage des données en fonction du bouton cliqué */}
-        {displayData && (
-          <div className="mx-auto w-[90%] md:w-[80%] lg:w-[60%]">
-            {activeButton === "Présentation" && (
-              <p className="text-l text-white">{displayData.description}</p>
+        <div className="mx-auto w-[90%] md:w-[80%] lg:w-[60%]">
+          <AnimatePresence mode="wait">
+            {displayData && (
+              <motion.div
+                key={activeButton}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+              >
+                {activeButton === "Présentation" && (
+                  <p className="text-l text-white">{displayData.description}</p>
+                )}
+                {activeButton === "Mes projets" && displayData.projects && (
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    {displayData.projects.map((project, index) => (
+                      <a
+                        key={index}
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="card relative overflow-hidden rounded-lg">
+                          <img
+                            className="h-full w-full object-cover"
+                            src={project.image}
+                            alt="Project"
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-4 text-white">
+                            <p className="text-lg">{project.description}</p>
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {activeButton === "Mes compétences" && (
+                  <p className="text-l text-white">{displayData.description}</p>
+                )}
+              </motion.div>
             )}
-            {activeButton === "Mes projets" && displayData.projects && (
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {displayData.projects.map((project, index) => (
-                  <a
-                    key={index}
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="card relative overflow-hidden rounded-lg">
-                      <img
-                        className="h-full w-full object-cover"
-                        src={project.image}
-                        alt="Project"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 p-4 text-white">
-                        <p className="text-lg">{project.description}</p>
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            )}
-            {activeButton === "Mes compétences" && (
-              <p className="text-l text-white">{displayData.description}</p>
-            )}
-          </div>
-        )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
