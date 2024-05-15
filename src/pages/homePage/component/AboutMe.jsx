@@ -66,7 +66,7 @@ export default function AboutMe() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.5 }}
+                transition={{ ease: [0.215, 0.61, 0.355, 1] }}
               >
                 {activeButton === "Présentation" && (
                   <p className="text-l text-white">{displayData.description}</p>
