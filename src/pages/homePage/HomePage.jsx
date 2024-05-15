@@ -5,6 +5,7 @@ import Loader from "../../components/Loader";
 import Card from "./component/Card";
 import AboutMe from "./component/AboutMe";
 import codeImg from "../../assets/background-home.jpg";
+import Contact from "./component/Contact";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,7 +59,7 @@ export default function HomePage() {
           </button>
         </div>
       </div>
-      <div className="flex justify-around py-8">
+      <div className="flex flex-col justify-around py-12 md:flex-row">
         {[
           { icon, title: title1, text: text1 },
           { icon, title: title2, text: text2 },
@@ -71,8 +72,11 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
+            style={{ width: 1000 }}
           >
-            <Card icon={card.icon} title={card.title} text={card.text} />
+            <div className="mb-4 w-full md:mb-0">
+              <Card icon={card.icon} title={card.title} text={card.text} />
+            </div>
           </motion.div>
         ))}
       </div>
@@ -83,6 +87,7 @@ export default function HomePage() {
         transition={{ duration: 0.5 }}
       >
         <AboutMe />
+        <Contact />
       </motion.div>
     </div>
   );
