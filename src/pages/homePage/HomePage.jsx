@@ -8,19 +8,19 @@ import codeImg from "../../assets/background-home.jpg";
 import Contact from "./component/Contact";
 
 export default function HomePage() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // 2 secondes
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000); // 2 secondes
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   const icon = "test";
   const title1 = "Application sur mesure";
@@ -54,9 +54,12 @@ export default function HomePage() {
           <p className="py-6 text-xl font-bold text-white">
             Si vous avez besoin contactez moi
           </p>
-          <button className="rounded-md border bg-blue-600 px-6 py-2 text-xl font-bold text-white hover:border hover:border-blue-500 hover:bg-transparent hover:text-white">
+          <a
+            href="#contact"
+            className="rounded-md border bg-blue-600 px-6 py-2 text-xl font-bold text-white hover:border hover:border-blue-500 hover:bg-transparent hover:text-white"
+          >
             Contact
-          </button>
+          </a>
         </div>
       </div>
       <div className="flex flex-col justify-around py-12 md:flex-row">
@@ -71,7 +74,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1 }}
             style={{ width: 1000 }}
           >
             <div className="mb-4 w-full md:mb-0">
@@ -84,7 +87,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         <AboutMe />
         <Contact />
