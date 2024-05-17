@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import Loader from "../../components/Loader";
 import Card from "./component/Card";
 import AboutMe from "./component/AboutMe";
-import codeImg from "../../assets/background-home.jpg";
+import codeImg from "../../assets/background-home.webp";
 import Contact from "./component/Contact";
-
+import { FaBeer } from "react-icons/fa"; 
+import { AiFillHome } from "react-icons/ai";
 export default function HomePage() {
   // const [isLoading, setIsLoading] = useState(true);
 
@@ -74,7 +75,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
             style={{ width: 1000 }}
           >
             <div className="mb-4 w-full md:mb-0">
@@ -87,7 +88,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
       >
         <AboutMe />
         <Contact />

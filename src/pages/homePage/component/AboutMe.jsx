@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import taskManager from "../../../assets/TaskManager.jpeg";
-
+import taskManager from "../../../assets/TaskManager.webp";
+import spacex from '../../../assets/spacex.webp'
+import kaisaimg from '../../../assets/kaisa.webp'
+import portfolio2022 from '../../../assets/portfolio2022.webp'
 export default function AboutMe() {
   const [activeButton, setActiveButton] = useState("Présentation");
   const [displayData, setDisplayData] = useState(null);
@@ -9,19 +11,29 @@ export default function AboutMe() {
   const categoriesData = {
     Présentation: {
       description:
-        "Bonjour ! Je suis un développeur web passionné. Grâce à plusieurs années d'expérience dans le domaine, j'ai acquis une solide expertise dans la conception et le développement d'applications web. Au cours de ma carrière, j'ai travaillé sur divers projets, allant de sites web personnels à des applications d'entreprise complexes. J'ai développé des compétences approfondies en HTML, CSS, JavaScript ainsi qu'en frameworks tels que React.js. ",
+        "Bonjour ! Je suis un développeur web passionné en cours d'année pour un bac + 4. Grâce à plusieurs années d'expérience dans le domaine, j'ai acquis une solide expertise dans la conception et le développement d'applications web. Au cours de ma carrière, j'ai travaillé sur divers projets, allant de sites web personnels à des applications d'entreprise complexes. J'ai développé des compétences approfondies en HTML, CSS, JavaScript ainsi qu'en frameworks tels que React.js. ",
     },
     "Mes projets": {
       projects: [
         {
           description: "Prototype site vitrine pour un site de logement",
-          image: taskManager,
+          image: kaisaimg,
           url: "https://kaisa-kappa.vercel.app/",
         },
         {
           description: "Prototype de copie de l'application Trello",
           image: taskManager,
           url: "https://task-manager-fdu50vyj7-supersixaxis-projects.vercel.app/login",
+        },
+        {
+          description: "Site sur starwars en js avec une api",
+          image: spacex,
+          url: "https://supersixaxis.github.io/About-the-universe/",
+        },
+        {
+          description: "Portfolio fait avec react",
+          image: portfolio2022,
+          url: "https://react-cv-neon.vercel.app/",
         },
         // Ajoutez d'autres projets selon vos besoins
       ],
