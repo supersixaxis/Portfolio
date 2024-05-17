@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import taskManager from "../../../assets/TaskManager.webp";
-import spacex from '../../../assets/spacex.webp'
+import spacex from '../../../assets/Spacex.webp'
 import kaisaimg from '../../../assets/kaisa.webp'
 import portfolio2022 from '../../../assets/portfolio2022.webp'
 export default function AboutMe() {
