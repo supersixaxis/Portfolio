@@ -5,8 +5,8 @@ export default function Loader() {
   return (
     <div className="loader-container">
       <div className="loading-text">
-        <span className="text">Chargement</span>
-        <span className="dots">...</span>
+        <span className="text">En Construction</span>
+        
       </div>
     </div>
   );

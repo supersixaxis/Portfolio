@@ -39,7 +39,7 @@ export default function AboutMe() {
       ],
     },
     "Mes compétences": {
-      description: "Je suis très compétent...",
+      description: "En construction",
     },
   };
 
@@ -54,14 +54,14 @@ export default function AboutMe() {
   return (
     <div className="text-center">
       <h1 className="py-12 text-3xl font-semibold">About me</h1>
-      <div className="flex justify-center">
+      <div className="flex flex-wrap justify-center px-4">
         {Object.keys(categoriesData).map((category) => (
           <button
             key={category}
-            className={`text-l rounded-sm border px-6 py-2 font-bold hover:border-blue-500 hover:text-white ${
+            className={`text-l m-2 rounded-sm border px-6 py-2 font-bold transition-colors duration-300 hover:border-blue-500 ${
               activeButton === category
                 ? "bg-blue-600 text-white"
-                : "bg-transparent text-blue-600"
+                : "bg-transparent text-blue-600 hover:bg-blue-500 hover:text-white"
             }`}
             onClick={() => handleButtonClick(category)}
           >
@@ -92,7 +92,9 @@ export default function AboutMe() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <div className="card relative overflow-hidden rounded-lg">
+                        <div className="card relative h-80 overflow-hidden rounded-lg">
+                          {" "}
+                          {/* Hauteur fixe */}
                           <img
                             className="h-full w-full object-cover"
                             src={project.image}

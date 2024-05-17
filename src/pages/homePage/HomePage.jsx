@@ -9,19 +9,19 @@ import Contact from "./component/Contact";
 import { FaBeer } from "react-icons/fa"; 
 import { AiFillHome } from "react-icons/ai";
 export default function HomePage() {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 2000); // 2 secondes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 secondes
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  if (isLoading) {
+    return <Loader />;
+  }
 
   const icon = "test";
   const title1 = "Application sur mesure";
@@ -41,9 +41,9 @@ export default function HomePage() {
           className="h-auto w-full brightness-50 filter"
         />
         <div className="bg-color-primaire absolute left-0 top-0 h-full w-full opacity-70"></div>
-        <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform text-center">
+        <div className="absolute left-1/2 top-1/2 z-10 w-full -translate-x-1/2 -translate-y-1/2 transform px-4 text-center">
           <p className="py-4 text-xl font-bold text-white">Bienvenue !</p>
-          <h1 className="text-5xl font-bold text-white">
+          <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
             <Typewriter
               options={{
                 strings: ["Je suis développeur web"],
@@ -57,7 +57,7 @@ export default function HomePage() {
           </p>
           <a
             href="#contact"
-            className="rounded-md border bg-blue-600 px-6 py-2 text-xl font-bold text-white hover:border hover:border-blue-500 hover:bg-transparent hover:text-white"
+            className="mt-4 inline-block rounded-md border bg-blue-600 px-6 py-2 text-xl font-bold text-white hover:border hover:border-blue-500 hover:bg-transparent hover:text-white md:mt-6"
           >
             Contact
           </a>
@@ -76,9 +76,8 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}
-            style={{ width: 1000 }}
           >
-            <div className="mb-4 w-full md:mb-0">
+            <div key={index} className="">
               <Card icon={card.icon} title={card.title} text={card.text} />
             </div>
           </motion.div>
