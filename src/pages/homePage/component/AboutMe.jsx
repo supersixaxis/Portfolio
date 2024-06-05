@@ -4,7 +4,7 @@ import taskManager from "../../../assets/TaskManager.webp";
 import spacex from '../../../assets/SpaceX.webp'
 import kaisaimg from '../../../assets/kaisa.webp'
 import portfolio2022 from '../../../assets/portfolio2022.webp'
-import voipdiese from '../../../assets/voipdiese.PNG'
+import voipdiese from '../../../assets/voipdiese.webp'
 export default function AboutMe() {
   const [activeButton, setActiveButton] = useState("Présentation");
   const [displayData, setDisplayData] = useState(null);
