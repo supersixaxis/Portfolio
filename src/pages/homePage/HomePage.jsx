@@ -28,7 +28,7 @@ export default function HomePage() {
   const text1 = "Je réalise vos projets selon vos besoins.";
   const title2 = "SEO";
   const text2 =
-    "Je met en place une stratégie de référencement pour mettre en avant votre projet.";
+    "Je mets en place une stratégie de référencement pour mettre en avant votre projet.";
   const title3 = "Application sur mesure";
   const text3 = "Je réalise vos projets selon vos besoins.";
 
