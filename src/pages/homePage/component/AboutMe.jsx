@@ -4,6 +4,7 @@ import taskManager from "../../../assets/TaskManager.webp";
 import spacex from '../../../assets/SpaceX.webp'
 import kaisaimg from '../../../assets/kaisa.webp'
 import portfolio2022 from '../../../assets/portfolio2022.webp'
+import voipdiese from '../../../assets/voipdiese.PNG'
 export default function AboutMe() {
   const [activeButton, setActiveButton] = useState("Présentation");
   const [displayData, setDisplayData] = useState(null);
@@ -34,6 +35,12 @@ export default function AboutMe() {
           description: "Portfolio fait avec react",
           image: portfolio2022,
           url: "https://react-cv-neon.vercel.app/",
+        },
+        {
+          description:
+            "Site de gestion d'interphone et de résidence pour l'entreprise Dièse Télécom",
+          image: voipdiese,
+          url: "https://voipdiese.com/",
         },
         // Ajoutez d'autres projets selon vos besoins
       ],
