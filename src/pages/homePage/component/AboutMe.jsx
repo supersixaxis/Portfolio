@@ -46,7 +46,7 @@ export default function AboutMe() {
       ],
     },
     "Mes compétences": {
-      description: "En construction",
+      description: "J'utilise principalement du javascript, react et nodejs",
     },
   };
 
