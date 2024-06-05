@@ -24,7 +24,7 @@ export default function AboutMe() {
         {
           description: "Prototype de copie de l'application Trello",
           image: taskManager,
-          url: "https://task-manager-fdu50vyj7-supersixaxis-projects.vercel.app/login",
+          url: "https://task-manager-sage-ten.vercel.app/login",
         },
         {
           description: "Site sur starwars en js avec une api",
