@@ -63,11 +63,11 @@ export default function AboutMe() {
         {
           title: "Voip Dièse",
           description:
-            "Site de gestion d'interphone et de résidence pour l'entreprise Dièse Télécom",
+            "Site de gestion d'interphone et de résidence pour l'entreprise Dièse Télécom. C'est un site interne à l'entreprise pour gérer les équipements des résidences des clients.",
           image: voipdiese,
           url: "https://voipdiese.com/",
           codeUrl: null,
-          technologies: ["PHP", "MySQL", "Bootstrap"],
+          technologies: ["react", "MySQL", "nodejs"],
         },
         {
           title: "Covid Clicker",
