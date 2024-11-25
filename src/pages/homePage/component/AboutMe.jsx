@@ -124,11 +124,11 @@ export default function AboutMe() {
           <AnimatePresence mode="wait">
             {displayData && (
               <motion.div
-                key={activeButton}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ ease: [0.215, 0.61, 0.355, 1] }}
+                // key={activeButton}
+                // initial={{ opacity: 0, y: 10 }}
+                // animate={{ opacity: 1, y: 0 }}
+                // exit={{ opacity: 0, y: -10 }}
+                // transition={{ ease: [0.215, 0.61, 0.355, 1] }}
               >
                 {activeButton === "Présentation" && (
                   <p className="text-xl text-white">
@@ -181,10 +181,10 @@ export default function AboutMe() {
       <AnimatePresence>
         {selectedProject && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            // className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            // exit={{ opacity: 0 }}
           >
             <div className="bg-color-primaire relative w-[95%] rounded-lg p-8  md:w-[70%] lg:w-[50%]">
               <button
