@@ -16,7 +16,7 @@ import phpLogo from "../../../assets/php.webp";
 export default function AboutMe() {
   const [activeButton, setActiveButton] = useState("Présentation");
   const [displayData, setDisplayData] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(null); // État pour gérer la popup
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const categoriesData = {
     Présentation: {
