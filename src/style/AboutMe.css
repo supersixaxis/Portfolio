@@ -1,0 +1,16 @@
+.modern-border-bottom {
+  position: relative;
+  padding-bottom: 20px; /* Ajuste selon ton design */
+}
+
+.modern-border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+
+ 
+  width: 100%; /* Ajuste la largeur du bord */
+  height: 1px;
+  background: linear-gradient(to right, #b0bec510, #b0bec510, #b0bec510);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

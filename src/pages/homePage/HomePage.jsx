@@ -6,15 +6,15 @@ import Card from "./component/Card";
 import AboutMe from "./component/AboutMe";
 import codeImg from "../../assets/background-home.webp";
 import Contact from "./component/Contact";
-import { FaBeer } from "react-icons/fa"; 
-import { AiFillHome } from "react-icons/ai";
+import Footer from "./component/Footer";
+import "../../style/AboutMe.css";
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 2 secondes
+    }, 1000); // 2 secondes
 
     return () => clearTimeout(timer);
   }, []);
@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-color-primaire">
-      <div className="relative">
+      <div className="relative shadow-md">
         <img
           src={codeImg}
           alt="background"
@@ -63,7 +63,7 @@ export default function HomePage() {
           </a>
         </div>
       </div>
-      <div className="flex flex-col justify-around py-12 md:flex-row">
+      <div className="modern-border-bottom flex flex-col justify-around py-12 shadow-md md:flex-row">
         {[
           { icon, title: title1, text: text1 },
           { icon, title: title2, text: text2 },
@@ -91,6 +91,7 @@ export default function HomePage() {
       >
         <AboutMe />
         <Contact />
+        <Footer />
       </motion.div>
     </div>
   );

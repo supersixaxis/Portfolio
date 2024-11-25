@@ -28,7 +28,7 @@ export default function Contact() {
 
   return (
     <div className="flex h-full items-center justify-center py-24" id="contact">
-      <div className="w-full max-w-md  px-6 py-8 text-black shadow-md">
+      <div className="w-full max-w-md  px-6 py-8 text-black">
         <h2 className="mb-6 text-center text-xl font-semibold text-white">
           Contactez moi
         </h2>
