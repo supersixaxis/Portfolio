@@ -8,7 +8,7 @@ import voipdiese from "../../../assets/voipdiese.webp";
 import covidClicker from "../../../assets/covid-clicker.webp";
 import javascriptLogo from "../../../assets/javascript.webp";
 import reactLogo from "../../../assets/react.webp";
-import nodejsLogo from "../../../assets/nodejs.webp";
+import nodejsLogo from "../../../assets/nodeJS.webp";
 import cSharpLogo from "../../../assets/cSharp.webp";
 import sqlLogo from "../../../assets/sql.webp";
 import wordpressLogo from "../../../assets/wordpress.webp";
