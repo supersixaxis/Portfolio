@@ -14,7 +14,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // 2 secondes
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -38,7 +38,7 @@ export default function HomePage() {
         <img
           src={codeImg}
           alt="background"
-          className="h-auto w-full brightness-50 filter"
+          class="h-auto w-full brightness-50 filter" width="1920" height="1080"
         />
         <div className="bg-color-primaire absolute left-0 top-0 h-full w-full opacity-70"></div>
         <div className="absolute left-1/2 top-1/2 z-10 w-full -translate-x-1/2 -translate-y-1/2 transform px-4 text-center">
@@ -70,12 +70,12 @@ export default function HomePage() {
           { icon, title: title3, text: text3 },
         ].map((card, index) => (
           <motion.div
-            key={index}
-            className="card-container"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
+            // key={index}
+            // className="card-container"
+            // initial={{ opacity: 0, y: 50 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // viewport={{ once: true, amount: 0.5 }}
+            // transition={{ duration: 0.5 }}
           >
             <div key={index} className="">
               <Card icon={card.icon} title={card.title} text={card.text} />
@@ -84,10 +84,10 @@ export default function HomePage() {
         ))}
       </div>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
+        // initial={{ opacity: 0, y: 50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // viewport={{ once: true, amount: 0.5 }}
+        // transition={{ duration: 0.5 }}
       >
         <AboutMe />
         <Contact />
